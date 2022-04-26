@@ -16,7 +16,7 @@ struct LessonView: View {
         HStack {
             Rectangle()
                 .frame(width: 10)
-                .foregroundColor(.red)
+                .foregroundColor(getLessonColor())
             
             VStack(alignment: .leading) {
                 Text("")
@@ -49,6 +49,17 @@ struct LessonView: View {
         .innerShadow()
         .dropShadow()
         .padding([.leading, .trailing])
+    }
+    
+    func getLessonColor() -> Color {
+        switch lesson.lessonType {
+        case .laboratory:
+            return .red
+        case .practice:
+            return .yellow
+        case .lecture:
+            return .green
+        }
     }
 }
 
