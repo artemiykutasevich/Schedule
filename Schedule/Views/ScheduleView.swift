@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ScheduleView: View {
     @StateObject private var viewModel = ScheduleViewModel()
+    let backgroundColor = Color("Background")
     
     var body: some View {
         NavigationView {
@@ -20,8 +21,8 @@ struct ScheduleView: View {
             .safeAreaInset(edge: .bottom) {
                 Color.clear.frame(height: 110)
             }
-            .navigationTitle("Schedule")
-            .background(Color("Background").ignoresSafeArea())
+            .navigationTitle("Расписание")
+            .background(backgroundColor.ignoresSafeArea())
         }
     }
 }

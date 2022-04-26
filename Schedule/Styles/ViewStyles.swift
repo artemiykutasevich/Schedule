@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ViewInnerShadowStyle: ViewModifier {
+    @Environment(\.colorScheme) private var colorScheme
     let cornerRadius: CGFloat
     
     func body(content: Content) -> some View {
@@ -16,7 +17,7 @@ struct ViewInnerShadowStyle: ViewModifier {
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .stroke(.white, lineWidth: 1)
                     .shadow(color: .primary, radius: 3, x: 3, y: 3)
-                    .shadow(color: .white, radius: 3, x: -3, y: -3)
+                    .shadow(color: colorScheme == .light ? .white : .clear, radius: 3, x: -3, y: -3)
                     .clipShape(
                         RoundedRectangle(cornerRadius: cornerRadius)
                     )
@@ -25,13 +26,14 @@ struct ViewInnerShadowStyle: ViewModifier {
 }
 
 struct ViewDropShadowStyle: ViewModifier {
+    @Environment(\.colorScheme) private var colorScheme
     let cornerRadius: CGFloat
     
     func body(content: Content) -> some View {
         content
             .background(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .shadow(color: .white.opacity(0.5), radius: 3, x: -3, y: -3)
+                    .shadow(color: colorScheme == .light ? .white.opacity(0.5) : .clear, radius: 3, x: -3, y: -3)
                     .shadow(color: .primary.opacity(0.5), radius: 3, x: 3, y: 3)
             )
     }

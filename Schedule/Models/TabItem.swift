@@ -15,6 +15,6 @@ struct TabItem: Identifiable {
 }
 
 var tabItems = [
-    TabItem(text: "Schedule", icon: "calendar", tab: .schedule),
-    TabItem(text: "About", icon: "ellipsis", tab: .about)
+    TabItem(text: "Расписание", icon: "calendar", tab: .schedule),
+    TabItem(text: "О приложении", icon: "ellipsis", tab: .about)
 ]

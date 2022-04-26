@@ -7,7 +7,9 @@
 
 import Foundation
 
-enum LessonType: String {
+enum LessonType: String, CaseIterable, Identifiable {
+    var id: LessonType { self }
+    
     case laboratory = "Лабораторная"
     case practice = "Практика"
     case lecture = "Лекция"

@@ -21,8 +21,6 @@ struct LessonView: View {
             VStack(alignment: .leading) {
                 Text("")
                     .titleTextStyle(text: lesson.lessonStartAt)
-                Text("")
-                    .calloutTextStyle(text: lesson.lessonEndAt)
             }
             
             Spacer()
@@ -65,7 +63,7 @@ struct LessonView: View {
 
 struct LessonView_Previews: PreviewProvider {
     static var previews: some View {
-        let object = LessonModel(lessonStartAt: "9:00", lessonEndAt: "10:20", lessonName: "Предмет", lessonType: .laboratory, lessonClass: "аудитория", teacherLastName: "Фамилия")
+        let object = LessonModel(lessonStartAt: "9:00", lessonName: "Предмет", lessonType: .lecture, lessonClass: "аудитория", teacherLastName: "Фамилия")
         Group {
             LessonView(lesson: object)
             LessonView(lesson: object)

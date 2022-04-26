@@ -21,6 +21,11 @@
 		B864FBB92816A53400419C98 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B864FBB82816A53400419C98 /* TabBar.swift */; };
 		B864FBBB2816A5F300419C98 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B864FBBA2816A5F300419C98 /* Tab.swift */; };
 		B864FBBD2816A77200419C98 /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B864FBBC2816A77200419C98 /* PreferenceKeys.swift */; };
+		B8C7038C2817C9D000FFA615 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7038B2817C9D000FFA615 /* TabItem.swift */; };
+		B8C7038E2817E28E00FFA615 /* AddLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7038D2817E28E00FFA615 /* AddLessonView.swift */; };
+		B8C703902817E41F00FFA615 /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7038F2817E41F00FFA615 /* TextFieldStyles.swift */; };
+		B8C703922817ECDD00FFA615 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C703912817ECDD00FFA615 /* Week.swift */; };
+		B8C703942817FD7C00FFA615 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C703932817FD7C00FFA615 /* ButtonStyles.swift */; };
 		B8DD59522816D5E000BDE4FA /* ViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD59512816D5E000BDE4FA /* ViewStyles.swift */; };
 		B8DD59552816E1D800BDE4FA /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD59542816E1D800BDE4FA /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +46,11 @@
 		B864FBB82816A53400419C98 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		B864FBBA2816A5F300419C98 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		B864FBBC2816A77200419C98 /* PreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
+		B8C7038B2817C9D000FFA615 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		B8C7038D2817E28E00FFA615 /* AddLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLessonView.swift; sourceTree = "<group>"; };
+		B8C7038F2817E41F00FFA615 /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
+		B8C703912817ECDD00FFA615 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
+		B8C703932817FD7C00FFA615 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		B8DD59512816D5E000BDE4FA /* ViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyles.swift; sourceTree = "<group>"; };
 		B8DD59542816E1D800BDE4FA /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +122,7 @@
 			children = (
 				B82C0BED281691A20064BDE2 /* ScheduleView.swift */,
 				B82C0BEF281691B90064BDE2 /* AboutView.swift */,
+				B8C7038D2817E28E00FFA615 /* AddLessonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,7 +141,9 @@
 				B82C0BF5281698540064BDE2 /* LessonType.swift */,
 				B82C0BF728169B480064BDE2 /* LessonModel.swift */,
 				B864FBBA2816A5F300419C98 /* Tab.swift */,
+				B8C7038B2817C9D000FFA615 /* TabItem.swift */,
 				B864FBBC2816A77200419C98 /* PreferenceKeys.swift */,
+				B8C703912817ECDD00FFA615 /* Week.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,6 +153,8 @@
 			children = (
 				B82C0BF92816A0130064BDE2 /* TextStyles.swift */,
 				B8DD59512816D5E000BDE4FA /* ViewStyles.swift */,
+				B8C7038F2817E41F00FFA615 /* TextFieldStyles.swift */,
+				B8C703932817FD7C00FFA615 /* ButtonStyles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -239,12 +254,17 @@
 			files = (
 				B82C0BF6281698540064BDE2 /* LessonType.swift in Sources */,
 				B82C0BF828169B480064BDE2 /* LessonModel.swift in Sources */,
+				B8C703902817E41F00FFA615 /* TextFieldStyles.swift in Sources */,
 				B8DD59522816D5E000BDE4FA /* ViewStyles.swift in Sources */,
 				B82C0BF0281691B90064BDE2 /* AboutView.swift in Sources */,
+				B8C703922817ECDD00FFA615 /* Week.swift in Sources */,
 				B82C0BFA2816A0130064BDE2 /* TextStyles.swift in Sources */,
 				B82C0BDB2816907C0064BDE2 /* ContentView.swift in Sources */,
+				B8C7038E2817E28E00FFA615 /* AddLessonView.swift in Sources */,
 				B8DD59552816E1D800BDE4FA /* DatabaseManager.swift in Sources */,
 				B864FBBB2816A5F300419C98 /* Tab.swift in Sources */,
+				B8C703942817FD7C00FFA615 /* ButtonStyles.swift in Sources */,
+				B8C7038C2817C9D000FFA615 /* TabItem.swift in Sources */,
 				B82C0BD92816907C0064BDE2 /* ScheduleApp.swift in Sources */,
 				B82C0BF2281691D10064BDE2 /* ScheduleViewModel.swift in Sources */,
 				B82C0BF4281692340064BDE2 /* LessonView.swift in Sources */,
@@ -307,7 +327,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -361,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -387,6 +407,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -416,6 +437,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -10,7 +10,6 @@ import Foundation
 struct LessonModel: Identifiable {
     let id = UUID()
     let lessonStartAt: String
-    let lessonEndAt: String
     let lessonName: String
     let lessonType: LessonType
     let lessonClass: String

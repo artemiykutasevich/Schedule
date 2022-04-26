@@ -10,7 +10,7 @@ import SwiftUI
 struct TabBar: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .schedule
     @State var tabItemWidth: CGFloat = 0
-    let color = Color("Background")
+    let backgroundColor = Color("Background")
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -21,7 +21,7 @@ struct TabBar: View {
             }
             .padding(.top, 14)
             .frame(height: 88, alignment: .top)
-            .background(color, in: RoundedRectangle(cornerRadius: 34, style: .continuous))
+            .background(backgroundColor, in: RoundedRectangle(cornerRadius: 34, style: .continuous))
             .innerShadow()
             .frame(maxHeight: .infinity, alignment: .bottom)
             .ignoresSafeArea()
