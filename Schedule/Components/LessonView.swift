@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LessonView: View {
-    let lesson: LessonModel
+    let lesson: DatabaseLesson
     let cornerRadius: CGFloat = 25
     let color = Color("Background")
     
@@ -20,7 +20,9 @@ struct LessonView: View {
             
             VStack(alignment: .leading) {
                 Text("")
-                    .titleTextStyle(text: lesson.lessonStartAt)
+                    .titleTextStyle(text: lesson.lessonDayInWeek)
+                Text("")
+                    .bodyTextStyle(text: lesson.lessonStartAt)
             }
             
             Spacer()
@@ -29,7 +31,7 @@ struct LessonView: View {
                 Text("")
                     .bodyTextStyle(text: lesson.lessonName)
                 Text("")
-                    .calloutTextStyle(text: lesson.lessonType.rawValue)
+                    .calloutTextStyle(text: lesson.lessonType)
                 Text("")
                     .calloutTextStyle(text: lesson.lessonClass)
             }
@@ -51,23 +53,14 @@ struct LessonView: View {
     
     func getLessonColor() -> Color {
         switch lesson.lessonType {
-        case .laboratory:
+        case "Лабораторная":
             return .red
-        case .practice:
+        case "Практика":
             return .yellow
-        case .lecture:
+        case "Лекция":
             return .green
-        }
-    }
-}
-
-struct LessonView_Previews: PreviewProvider {
-    static var previews: some View {
-        let object = LessonModel(lessonStartAt: "9:00", lessonName: "Предмет", lessonType: .lecture, lessonClass: "аудитория", teacherLastName: "Фамилия")
-        Group {
-            LessonView(lesson: object)
-            LessonView(lesson: object)
-                .preferredColorScheme(.dark)
+        default:
+            return .primary
         }
     }
 }

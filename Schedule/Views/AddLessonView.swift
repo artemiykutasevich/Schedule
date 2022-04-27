@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct AddLessonView: View {
-    @State private var lessonName = ""
-    @State private var lessonClass = ""
-    @State private var teacherLastName = ""
-    
-    @State private var selectedDay: Week = .Monday
-    @State private var lessonStartAt = Date()
-    @State private var lessonType: LessonType = .lecture
+    @StateObject private var viewModel = AddLessonViewModel()
     
     let backgroundColor = Color("Background")
     
@@ -22,12 +16,13 @@ struct AddLessonView: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    TextField("Название предмета", text: $lessonName)
+                    TextField("Название предмета", text: $viewModel.lessonName)
                         .textFieldNeumorphismStyle()
-                    TextField("Аудитория", text: $lessonClass)
+                    TextField("Фамилия преподавателя", text: $viewModel.teacherLastName)
                         .textFieldNeumorphismStyle()
-                    TextField("Фамилия преподавателя", text: $teacherLastName)
+                    TextField("Аудитория", text: $viewModel.lessonClass)
                         .textFieldNeumorphismStyle()
+                        .keyboardType(.numbersAndPunctuation)
                 }
                 .padding()
                 
@@ -36,7 +31,7 @@ struct AddLessonView: View {
                         Text("")
                             .bodyTextStyle(text: "Выберите день недели")
                         Spacer()
-                        Picker("", selection: $selectedDay) {
+                        Picker("", selection: $viewModel.selectedDay) {
                             ForEach(Week.allCases) { day in
                                 Text(day.rawValue)
                             }
@@ -49,12 +44,12 @@ struct AddLessonView: View {
                         Text("")
                             .bodyTextStyle(text: "Выберите время")
                         Spacer()
-                        DatePicker("", selection: $lessonStartAt, displayedComponents: .hourAndMinute)
+                        DatePicker("", selection: $viewModel.lessonStartAt, displayedComponents: .hourAndMinute)
                             .labelsHidden()
                     }
                     
                     HStack {
-                        Picker("", selection: $lessonType) {
+                        Picker("", selection: $viewModel.lessonType) {
                             ForEach(LessonType.allCases) { lesson in
                                 Text(lesson.rawValue)
                             }
@@ -66,7 +61,7 @@ struct AddLessonView: View {
                 .padding()
                 
                 Button(action: {
-                    // add logic
+                    viewModel.saveLesson()
                 }, label: {
                     Text("")
                         .bodyTextStyle(text: "Сохранить занятие")

@@ -8,12 +8,5 @@
 import SwiftUI
 
 class ScheduleViewModel: ObservableObject {
-    @Published var lessons = [LessonModel]()
-    
-    init() {
-        let object = LessonModel(lessonStartAt: "9:00", lessonName: "Предмет", lessonType: .lecture, lessonClass: "аудитория", teacherLastName: "Фамилия")
-        lessons.append(object)
-        lessons.append(object)
-        lessons.append(object)
-    }
+    @Published var lessons = DatabaseManager.databaseManager.savedLessons
 }
