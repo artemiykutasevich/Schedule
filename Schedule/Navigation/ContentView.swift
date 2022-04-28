@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .schedule
-    @State private var sheetIsActive = false
     
     var body: some View {
         ZStack {
@@ -21,24 +20,7 @@ struct ContentView: View {
                     AboutView()
                 }
             }
-            .sheet(isPresented: $sheetIsActive) {
-                AddLessonView()
-            }
             TabBar()
-            
-            if selectedTab == .schedule {
-                Button(action: {
-                    sheetIsActive = true
-                }, label: {
-                    Text("")
-                        .bodyTextStyle(text: "новое занятие")
-                        .foregroundColor(.primary)
-                })
-                .buttonNeumorphismStyle()
-                .frame(maxHeight: .infinity, alignment: .bottom)
-                .ignoresSafeArea()
-                .offset(y: -60)
-            }
         }
     }
 }

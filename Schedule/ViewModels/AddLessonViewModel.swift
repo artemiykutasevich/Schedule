@@ -27,7 +27,7 @@ class AddLessonViewModel: ObservableObject {
             lessonType: lessonType,
             lessonClass: lessonClass,
             teacherLastName: teacherLastName)
-        databaseManager.saveLesson(lesson: lessonObject)
+        databaseManager.newLesson(lesson: lessonObject)
         
         clean()
     }

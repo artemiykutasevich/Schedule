@@ -11,7 +11,7 @@ class EditLessonViewModel: ObservableObject {
     private let databaseManager = DatabaseManager.databaseManager
     
     func saveChanges(from lesson: LessonModel) {
-        databaseManager.saveChanges(lesson: lesson)
+        databaseManager.changeLesson(lesson: lesson)
     }
     
     func deleteLesson(by idCode: UUID) {

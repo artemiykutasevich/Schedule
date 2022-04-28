@@ -21,6 +21,7 @@ struct LessonView: View {
             VStack(alignment: .leading) {
                 Text("")
                     .titleTextStyle(text: lesson.lessonDayInWeek.rawValue)
+                    .scalableTextStyle()
                 Text("")
                     .bodyTextStyle(text: getTime(from: lesson.lessonStartAt))
             }
@@ -30,8 +31,10 @@ struct LessonView: View {
             VStack {
                 Text("")
                     .bodyTextStyle(text: lesson.lessonName)
+                    .scalableTextStyle()
                 Text("")
                     .calloutTextStyle(text: lesson.lessonType.rawValue)
+                    .scalableTextStyle()
                 Text("")
                     .calloutTextStyle(text: lesson.lessonClass)
             }
@@ -41,6 +44,7 @@ struct LessonView: View {
             VStack {
                 Text("")
                     .bodyTextStyle(text: lesson.teacherLastName)
+                    .scalableTextStyle()
             }
         }
         .frame(height: 60)

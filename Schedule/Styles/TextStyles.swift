@@ -37,6 +37,14 @@ struct CalloutTextStyle: ViewModifier {
     }
 }
 
+struct ScalableTextStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .lineLimit(1)
+            .minimumScaleFactor(0.5)
+    }
+}
+
 extension Text {
     func titleTextStyle(text: String) -> some View {
         self.modifier(TitleTextStyle(text: text))
@@ -48,5 +56,11 @@ extension Text {
     
     func calloutTextStyle(text: String) -> some View {
         self.modifier(CalloutTextStyle(text: text))
+    }
+}
+
+extension View {
+    func scalableTextStyle() -> some View {
+        self.modifier(ScalableTextStyle())
     }
 }

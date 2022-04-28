@@ -13,21 +13,33 @@ struct ScheduleView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                ForEach(viewModel.lessons) { lesson in
-                    NavigationLink(destination: EditLessonView(lesson: lesson), label: {
-                        LessonView(lesson: lesson)
-                            .foregroundColor(.primary)
-                    })
+            ZStack {
+                ScrollView {
+                    ForEach(viewModel.lessons) { lesson in
+                        NavigationLink(destination: EditLessonView(lesson: lesson), label: {
+                            LessonView(lesson: lesson)
+                                .foregroundColor(.primary)
+                        })
+                    }
                 }
-            }
-            .safeAreaInset(edge: .bottom) {
-                Color.clear.frame(height: 110)
-            }
-            .navigationTitle("Расписание")
-            .background(backgroundColor.ignoresSafeArea())
-            .onAppear() {
-                viewModel.setUpLessons()
+                .safeAreaInset(edge: .bottom) {
+                    Color.clear.frame(height: 110)
+                }
+                .navigationTitle("Расписание")
+                .background(backgroundColor.ignoresSafeArea())
+                .onAppear() {
+                    viewModel.setUpLessons()
+                }
+                
+                NavigationLink(destination: AddLessonView(), label: {
+                    Text("")
+                        .bodyTextStyle(text: "новое занятие")
+                        .foregroundColor(.primary)
+                        .buttonNeumorphismStyle()
+                })
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                .ignoresSafeArea()
+                .offset(y: -60)
             }
         }
     }

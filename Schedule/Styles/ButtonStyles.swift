@@ -17,7 +17,7 @@ struct ButtonNeumorphismStyle: ViewModifier {
     }
 }
 
-extension Button {
+extension View {
     func buttonNeumorphismStyle() -> some View {
         self.modifier(ButtonNeumorphismStyle())
     }

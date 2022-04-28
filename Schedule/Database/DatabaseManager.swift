@@ -16,56 +16,43 @@ class DatabaseManager {
     
     private let realm = try! Realm()
     
-    func saveLesson(lesson: LessonModel) {
-        let object = DatabaseLesson()
-        object.id = lesson.id
-        object.lessonDayInWeek = lesson.lessonDayInWeek.rawValue
-        object.lessonStartAt = lesson.lessonStartAt
-        object.lessonName = lesson.lessonName
-        object.lessonType = lesson.lessonType.rawValue
-        object.lessonClass = lesson.lessonClass
-        object.teacherLastName = lesson.teacherLastName
+    func newLesson(lesson: LessonModel) {
+        let object = setUp(databaseLesson: DatabaseLesson(), from: lesson)
         
-        saveData(object: object)
-    }
-    
-    func deleteLesson(with idCode: UUID) {
-        let object = realm.objects(DatabaseLesson.self).filter{$0.id == idCode}.first
-        
-        try! realm.write {
-            if let obj = object {
-                realm.delete(obj)
-            }
-        }
-    }
-    
-    func saveChanges(lesson: LessonModel) {
-        let object = realm.objects(DatabaseLesson.self).where{$0.id == lesson.id}.first!
-        
-        try! realm.write {
-            object.lessonDayInWeek = lesson.lessonDayInWeek.rawValue
-            object.lessonStartAt = lesson.lessonStartAt
-            object.lessonName = lesson.lessonName
-            object.lessonType = lesson.lessonType.rawValue
-            object.lessonClass = lesson.lessonClass
-            object.teacherLastName = lesson.teacherLastName
-        }
-    }
-    
-    private func findElement(by idCode: UUID) -> DatabaseLesson {
-        var lesson = DatabaseLesson()
-        
-        for element in savedLessons {
-            if element.id == idCode {
-                lesson = element
-            }
-        }
-        return lesson
-    }
-    
-    private func saveData(object: Object) {
         try! realm.write {
             realm.add(object)
         }
+    }
+    
+    func deleteLesson(with idCode: UUID) {
+        let object = findDatabaseLesson(by: idCode)
+        
+        try! realm.write {
+            realm.delete(object)
+        }
+    }
+    
+    func changeLesson(lesson: LessonModel) {
+        let object = findDatabaseLesson(by: lesson.id)
+        
+        try! realm.write {
+            setUp(databaseLesson: object, from: lesson)
+        }
+    }
+    
+    private func findDatabaseLesson(by idCode: UUID) -> DatabaseLesson {
+        let databaseLesson = realm.objects(DatabaseLesson.self).where{$0.id == idCode}.first!
+        return databaseLesson
+    }
+    
+    private func setUp(databaseLesson: DatabaseLesson, from lesson: LessonModel) -> DatabaseLesson {
+        databaseLesson.id = lesson.id
+        databaseLesson.lessonDayInWeek = lesson.lessonDayInWeek.rawValue
+        databaseLesson.lessonStartAt = lesson.lessonStartAt
+        databaseLesson.lessonName = lesson.lessonName
+        databaseLesson.lessonType = lesson.lessonType.rawValue
+        databaseLesson.lessonClass = lesson.lessonClass
+        databaseLesson.teacherLastName = lesson.teacherLastName
+        return databaseLesson
     }
 }
