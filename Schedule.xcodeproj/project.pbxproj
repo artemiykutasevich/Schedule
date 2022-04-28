@@ -23,6 +23,8 @@
 		B864FBB92816A53400419C98 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B864FBB82816A53400419C98 /* TabBar.swift */; };
 		B864FBBB2816A5F300419C98 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B864FBBA2816A5F300419C98 /* Tab.swift */; };
 		B864FBBD2816A77200419C98 /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B864FBBC2816A77200419C98 /* PreferenceKeys.swift */; };
+		B86C2661281ABD88005E20AC /* EditLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86C2660281ABD88005E20AC /* EditLessonView.swift */; };
+		B86C2663281AD0FE005E20AC /* EditLessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86C2662281AD0FE005E20AC /* EditLessonViewModel.swift */; };
 		B8C7038C2817C9D000FFA615 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7038B2817C9D000FFA615 /* TabItem.swift */; };
 		B8C7038E2817E28E00FFA615 /* AddLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7038D2817E28E00FFA615 /* AddLessonView.swift */; };
 		B8C703902817E41F00FFA615 /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7038F2817E41F00FFA615 /* TextFieldStyles.swift */; };
@@ -52,6 +54,8 @@
 		B864FBB82816A53400419C98 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		B864FBBA2816A5F300419C98 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		B864FBBC2816A77200419C98 /* PreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
+		B86C2660281ABD88005E20AC /* EditLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLessonView.swift; sourceTree = "<group>"; };
+		B86C2662281AD0FE005E20AC /* EditLessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLessonViewModel.swift; sourceTree = "<group>"; };
 		B8C7038B2817C9D000FFA615 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		B8C7038D2817E28E00FFA615 /* AddLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLessonView.swift; sourceTree = "<group>"; };
 		B8C7038F2817E41F00FFA615 /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				B82C0BED281691A20064BDE2 /* ScheduleView.swift */,
 				B82C0BEF281691B90064BDE2 /* AboutView.swift */,
 				B8C7038D2817E28E00FFA615 /* AddLessonView.swift */,
+				B86C2660281ABD88005E20AC /* EditLessonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			children = (
 				B82C0BF1281691D10064BDE2 /* ScheduleViewModel.swift */,
 				B857D0F4281831EA004E9E6E /* AddLessonViewModel.swift */,
+				B86C2662281AD0FE005E20AC /* EditLessonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -273,10 +279,12 @@
 				B82C0BF6281698540064BDE2 /* LessonType.swift in Sources */,
 				B82C0BF828169B480064BDE2 /* LessonModel.swift in Sources */,
 				B8C703902817E41F00FFA615 /* TextFieldStyles.swift in Sources */,
+				B86C2663281AD0FE005E20AC /* EditLessonViewModel.swift in Sources */,
 				B8DD59522816D5E000BDE4FA /* ViewStyles.swift in Sources */,
 				B82C0BF0281691B90064BDE2 /* AboutView.swift in Sources */,
 				B857D0F5281831EA004E9E6E /* AddLessonViewModel.swift in Sources */,
 				B8C703922817ECDD00FFA615 /* Week.swift in Sources */,
+				B86C2661281ABD88005E20AC /* EditLessonView.swift in Sources */,
 				B82C0BFA2816A0130064BDE2 /* TextStyles.swift in Sources */,
 				B82C0BDB2816907C0064BDE2 /* ContentView.swift in Sources */,
 				B8C7038E2817E28E00FFA615 /* AddLessonView.swift in Sources */,

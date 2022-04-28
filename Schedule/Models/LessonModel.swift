@@ -10,7 +10,7 @@ import Foundation
 struct LessonModel: Identifiable {
     let id: UUID
     let lessonDayInWeek: Week
-    let lessonStartAt: String
+    let lessonStartAt: Date
     let lessonName: String
     let lessonType: LessonType
     let lessonClass: String

@@ -22,7 +22,7 @@ struct LessonView: View {
                 Text("")
                     .titleTextStyle(text: lesson.lessonDayInWeek.rawValue)
                 Text("")
-                    .bodyTextStyle(text: lesson.lessonStartAt)
+                    .bodyTextStyle(text: getTime(from: lesson.lessonStartAt))
             }
             
             Spacer()
@@ -60,5 +60,11 @@ struct LessonView: View {
         case .lecture:
             return .green
         }
+    }
+    
+    func getTime(from date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: date)
     }
 }

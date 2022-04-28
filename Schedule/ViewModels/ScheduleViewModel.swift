@@ -12,7 +12,8 @@ class ScheduleViewModel: ObservableObject {
     
     private var databaseManager = DatabaseManager.databaseManager
     
-    init() {
+    func setUpLessons() {
+        lessons = []
         for element in databaseManager.savedLessons {
             let lesson = LessonModel(
                 id: element.id,
@@ -44,10 +45,5 @@ class ScheduleViewModel: ObservableObject {
             }
         }
         return result
-    }
-    
-    func deleteLesson(by id: UUID) {
-        lessons.removeAll(where: {$0.id == id})
-        databaseManager.deleteLesson(with: id)
     }
 }

@@ -22,7 +22,7 @@ class AddLessonViewModel: ObservableObject {
         let lessonObject = LessonModel(
             id: UUID(),
             lessonDayInWeek: selectedDay,
-            lessonStartAt: getTime(),
+            lessonStartAt: lessonStartAt,
             lessonName: lessonName,
             lessonType: lessonType,
             lessonClass: lessonClass,
@@ -30,12 +30,6 @@ class AddLessonViewModel: ObservableObject {
         databaseManager.saveLesson(lesson: lessonObject)
         
         clean()
-    }
-    
-    private func getTime() -> String {
-        let dataFormatter = DateFormatter()
-        dataFormatter.dateFormat = "HH:mm"
-        return dataFormatter.string(from: lessonStartAt)
     }
     
     private func clean() {

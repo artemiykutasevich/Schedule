@@ -11,7 +11,7 @@ import RealmSwift
 class DatabaseLesson: Object, Identifiable {
     @Persisted var id: UUID
     @Persisted var lessonDayInWeek: String
-    @Persisted var lessonStartAt: String
+    @Persisted var lessonStartAt: Date
     @Persisted var lessonName: String
     @Persisted var lessonType: String
     @Persisted var lessonClass: String

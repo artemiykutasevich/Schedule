@@ -39,6 +39,19 @@ class DatabaseManager {
         }
     }
     
+    func saveChanges(lesson: LessonModel) {
+        let object = realm.objects(DatabaseLesson.self).where{$0.id == lesson.id}.first!
+        
+        try! realm.write {
+            object.lessonDayInWeek = lesson.lessonDayInWeek.rawValue
+            object.lessonStartAt = lesson.lessonStartAt
+            object.lessonName = lesson.lessonName
+            object.lessonType = lesson.lessonType.rawValue
+            object.lessonClass = lesson.lessonClass
+            object.teacherLastName = lesson.teacherLastName
+        }
+    }
+    
     private func findElement(by idCode: UUID) -> DatabaseLesson {
         var lesson = DatabaseLesson()
         

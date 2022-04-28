@@ -15,28 +15,10 @@ struct ScheduleView: View {
         NavigationView {
             ScrollView {
                 ForEach(viewModel.lessons) { lesson in
-                    LessonView(lesson: lesson)
-                        .contextMenu {
-                            VStack {
-                                Button(action: {
-                                    viewModel.deleteLesson(by: lesson.id)
-                                }, label: {
-                                    HStack {
-                                        Text("Delete")
-                                        Image(systemName: "trash")
-                                    }
-                                })
-                                
-                                Button(action: {
-                                    //
-                                }, label: {
-                                    HStack {
-                                        Text("Edit")
-                                        Image(systemName: "square.and.pencil")
-                                    }
-                                })
-                            }
-                        }
+                    NavigationLink(destination: EditLessonView(lesson: lesson), label: {
+                        LessonView(lesson: lesson)
+                            .foregroundColor(.primary)
+                    })
                 }
             }
             .safeAreaInset(edge: .bottom) {
@@ -44,6 +26,9 @@ struct ScheduleView: View {
             }
             .navigationTitle("Расписание")
             .background(backgroundColor.ignoresSafeArea())
+            .onAppear() {
+                viewModel.setUpLessons()
+            }
         }
     }
 }
