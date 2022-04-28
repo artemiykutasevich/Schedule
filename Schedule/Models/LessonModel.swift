@@ -8,7 +8,7 @@
 import Foundation
 
 struct LessonModel: Identifiable {
-    let id = UUID()
+    let id: UUID
     let lessonDayInWeek: Week
     let lessonStartAt: String
     let lessonName: String

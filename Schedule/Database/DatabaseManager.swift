@@ -29,6 +29,27 @@ class DatabaseManager {
         saveData(object: object)
     }
     
+    func deleteLesson(with idCode: UUID) {
+        let object = realm.objects(DatabaseLesson.self).filter{$0.id == idCode}.first
+        
+        try! realm.write {
+            if let obj = object {
+                realm.delete(obj)
+            }
+        }
+    }
+    
+    private func findElement(by idCode: UUID) -> DatabaseLesson {
+        var lesson = DatabaseLesson()
+        
+        for element in savedLessons {
+            if element.id == idCode {
+                lesson = element
+            }
+        }
+        return lesson
+    }
+    
     private func saveData(object: Object) {
         try! realm.write {
             realm.add(object)

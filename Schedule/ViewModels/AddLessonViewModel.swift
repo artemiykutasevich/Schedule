@@ -20,6 +20,7 @@ class AddLessonViewModel: ObservableObject {
     
     func saveLesson() {
         let lessonObject = LessonModel(
+            id: UUID(),
             lessonDayInWeek: selectedDay,
             lessonStartAt: getTime(),
             lessonName: lessonName,

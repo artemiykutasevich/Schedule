@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LessonView: View {
-    let lesson: DatabaseLesson
+    let lesson: LessonModel
     let cornerRadius: CGFloat = 25
     let color = Color("Background")
     
@@ -20,7 +20,7 @@ struct LessonView: View {
             
             VStack(alignment: .leading) {
                 Text("")
-                    .titleTextStyle(text: lesson.lessonDayInWeek)
+                    .titleTextStyle(text: lesson.lessonDayInWeek.rawValue)
                 Text("")
                     .bodyTextStyle(text: lesson.lessonStartAt)
             }
@@ -31,7 +31,7 @@ struct LessonView: View {
                 Text("")
                     .bodyTextStyle(text: lesson.lessonName)
                 Text("")
-                    .calloutTextStyle(text: lesson.lessonType)
+                    .calloutTextStyle(text: lesson.lessonType.rawValue)
                 Text("")
                     .calloutTextStyle(text: lesson.lessonClass)
             }
@@ -53,14 +53,12 @@ struct LessonView: View {
     
     func getLessonColor() -> Color {
         switch lesson.lessonType {
-        case "Лабораторная":
+        case .laboratory:
             return .red
-        case "Практика":
+        case .practice:
             return .yellow
-        case "Лекция":
+        case .lecture:
             return .green
-        default:
-            return .primary
         }
     }
 }

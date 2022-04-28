@@ -16,6 +16,27 @@ struct ScheduleView: View {
             ScrollView {
                 ForEach(viewModel.lessons) { lesson in
                     LessonView(lesson: lesson)
+                        .contextMenu {
+                            VStack {
+                                Button(action: {
+                                    viewModel.deleteLesson(by: lesson.id)
+                                }, label: {
+                                    HStack {
+                                        Text("Delete")
+                                        Image(systemName: "trash")
+                                    }
+                                })
+                                
+                                Button(action: {
+                                    //
+                                }, label: {
+                                    HStack {
+                                        Text("Edit")
+                                        Image(systemName: "square.and.pencil")
+                                    }
+                                })
+                            }
+                        }
                 }
             }
             .safeAreaInset(edge: .bottom) {
