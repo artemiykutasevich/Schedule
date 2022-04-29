@@ -19,6 +19,9 @@ struct EditLessonView: View {
     @State var lessonStartAt: Date = Date()
     @State var lessonType: LessonType = .lecture
     
+    @State private var showingEditAlert = false
+    @State private var showingDeleteAlert = false
+    
     let backgroundColor = Color("Background")
     
     var body: some View {
@@ -70,6 +73,7 @@ struct EditLessonView: View {
             
             Button(action: {
                 viewModel.saveChanges(from: save())
+                showingEditAlert = true
             }, label: {
                 Text("")
                     .bodyTextStyle(text: "Сохранить изменения")
@@ -79,8 +83,7 @@ struct EditLessonView: View {
             .padding()
             
             Button(action: {
-                viewModel.deleteLesson(by: lesson.id)
-                cleanFields()
+                showingDeleteAlert = true
             }, label: {
                 Label("Удалить", systemImage: "trash")
                     .foregroundColor(.red)
@@ -90,6 +93,16 @@ struct EditLessonView: View {
         }
         .onAppear() {
             setUpFields()
+        }
+        .alert("Изменения сохранены", isPresented: $showingEditAlert) {
+            Button("Хорошо", role: .cancel) {}
+        }
+        .alert("Удалить занятие?", isPresented: $showingDeleteAlert) {
+            Button("Удалить", role: .destructive) {
+                viewModel.deleteLesson(by: lesson.id)
+                cleanFields()
+            }
+            Button("Оставить", role: .cancel) {}
         }
         .navigationTitle("Изменить занятие")
         .navigationBarTitleDisplayMode(.inline)

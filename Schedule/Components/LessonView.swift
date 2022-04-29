@@ -20,10 +20,7 @@ struct LessonView: View {
             
             VStack(alignment: .leading) {
                 Text("")
-                    .titleTextStyle(text: lesson.lessonDayInWeek.rawValue)
-                    .scalableTextStyle()
-                Text("")
-                    .bodyTextStyle(text: getTime(from: lesson.lessonStartAt))
+                    .titleTextStyle(text: getTime(from: lesson.lessonStartAt))
             }
             
             Spacer()

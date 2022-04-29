@@ -27,7 +27,13 @@ class ScheduleViewModel: ObservableObject {
         }
     }
     
-    func getDay(from string: String) -> Week {
+    func getLessonFor(day: Week) -> [LessonModel] {
+         return lessons
+            .filter{$0.lessonDayInWeek == day}
+            .sorted{$0.lessonStartAt < $1.lessonStartAt}
+    }
+    
+    private func getDay(from string: String) -> Week {
         var result = Week.Monday
         for day in Week.allCases {
             if day.rawValue == string {
@@ -37,7 +43,7 @@ class ScheduleViewModel: ObservableObject {
         return result
     }
     
-    func getLessonType(from string: String) -> LessonType {
+    private func getLessonType(from string: String) -> LessonType {
         var result = LessonType.lecture
         for lesson in LessonType.allCases {
             if lesson.rawValue == string {

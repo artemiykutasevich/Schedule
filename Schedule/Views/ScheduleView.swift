@@ -15,11 +15,22 @@ struct ScheduleView: View {
         NavigationView {
             ZStack {
                 ScrollView {
-                    ForEach(viewModel.lessons) { lesson in
-                        NavigationLink(destination: EditLessonView(lesson: lesson), label: {
-                            LessonView(lesson: lesson)
-                                .foregroundColor(.primary)
-                        })
+                    ForEach(Week.allCases) { day in
+                        Text("")
+                            .titleTextStyle(text: day.rawValue)
+                        
+                        if viewModel.getLessonFor(day: day).isEmpty {
+                            Text("")
+                                .calloutTextStyle(text: "Сегодня занятий нет")
+                                .padding(.bottom)
+                        } else {
+                            ForEach(viewModel.getLessonFor(day: day)) { lesson in
+                                    NavigationLink(destination: EditLessonView(lesson: lesson), label: {
+                                        LessonView(lesson: lesson)
+                                            .foregroundColor(.primary)
+                                    })
+                            }
+                        }
                     }
                 }
                 .safeAreaInset(edge: .bottom) {
