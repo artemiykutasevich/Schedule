@@ -20,6 +20,7 @@
 		B82C0BFA2816A0130064BDE2 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C0BF92816A0130064BDE2 /* TextStyles.swift */; };
 		B857D0F32818299E004E9E6E /* DatabaseLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857D0F22818299E004E9E6E /* DatabaseLesson.swift */; };
 		B857D0F5281831EA004E9E6E /* AddLessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857D0F4281831EA004E9E6E /* AddLessonViewModel.swift */; };
+		B86494DA281BE453003E55B3 /* LessonView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86494D9281BE453003E55B3 /* LessonView2.swift */; };
 		B864FBB92816A53400419C98 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B864FBB82816A53400419C98 /* TabBar.swift */; };
 		B864FBBB2816A5F300419C98 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B864FBBA2816A5F300419C98 /* Tab.swift */; };
 		B864FBBD2816A77200419C98 /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B864FBBC2816A77200419C98 /* PreferenceKeys.swift */; };
@@ -51,6 +52,7 @@
 		B82C0BF92816A0130064BDE2 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		B857D0F22818299E004E9E6E /* DatabaseLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseLesson.swift; sourceTree = "<group>"; };
 		B857D0F4281831EA004E9E6E /* AddLessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLessonViewModel.swift; sourceTree = "<group>"; };
+		B86494D9281BE453003E55B3 /* LessonView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView2.swift; sourceTree = "<group>"; };
 		B864FBB82816A53400419C98 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		B864FBBA2816A5F300419C98 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		B864FBBC2816A77200419C98 /* PreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				B82C0BF3281692340064BDE2 /* LessonView.swift */,
+				B86494D9281BE453003E55B3 /* LessonView2.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				B82C0BFA2816A0130064BDE2 /* TextStyles.swift in Sources */,
 				B82C0BDB2816907C0064BDE2 /* ContentView.swift in Sources */,
 				B8C7038E2817E28E00FFA615 /* AddLessonView.swift in Sources */,
+				B86494DA281BE453003E55B3 /* LessonView2.swift in Sources */,
 				B8DD59552816E1D800BDE4FA /* DatabaseManager.swift in Sources */,
 				B864FBBB2816A5F300419C98 /* Tab.swift in Sources */,
 				B8C703942817FD7C00FFA615 /* ButtonStyles.swift in Sources */,
