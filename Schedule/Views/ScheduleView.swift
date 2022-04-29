@@ -11,30 +11,27 @@ struct ScheduleView: View {
     @StateObject private var viewModel = ScheduleViewModel()
     let backgroundColor = Color("Background")
     
-    init() {
-        UITableView.appearance().backgroundColor = UIColor(backgroundColor)
-    }
-    
     var body: some View {
         NavigationView {
             ZStack {
-                List {
+                ScrollView {
                     ForEach(Week.allCases) { day in
-                        Section(day.rawValue) {
-                            if viewModel.getLessonFor(day: day).isEmpty {
-                                Text("")
-                                    .calloutTextStyle(text: "Сегодня занятий нет")
-                            } else {
-                                ForEach(viewModel.getLessonFor(day: day)) { lesson in
-                                        NavigationLink(destination: EditLessonView(lesson: lesson), label: {
-                                            LessonView2(lesson: lesson)
-                                        })
-                                }
+                        Text("")
+                            .titleTextStyle(text: day.rawValue)
+                        
+                        if viewModel.getLessonFor(day: day).isEmpty {
+                            Text("")
+                                .calloutTextStyle(text: "Сегодня занятий нет")
+                        } else {
+                            ForEach(viewModel.getLessonFor(day: day)) { lesson in
+                                NavigationLink(destination: EditLessonView(lesson: lesson), label: {
+                                    LessonView(lesson: lesson)
+                                })
+                                .foregroundColor(.primary)
                             }
                         }
                     }
                 }
-                .listStyle(.grouped)
                 .safeAreaInset(edge: .bottom) {
                     Color.clear.frame(height: 110)
                 }
