@@ -19,11 +19,11 @@ struct ScheduleView: View {
                         Text("")
                             .titleTextStyle(text: day.rawValue)
                         
-                        if viewModel.getLessonFor(day: day).isEmpty {
+                        if viewModel.getLessonsFor(day: day).isEmpty {
                             Text("")
                                 .calloutTextStyle(text: "Сегодня занятий нет")
                         } else {
-                            ForEach(viewModel.getLessonFor(day: day)) { lesson in
+                            ForEach(viewModel.getLessonsFor(day: day)) { lesson in
                                 NavigationLink(destination: EditLessonView(lesson: lesson), label: {
                                     LessonView(lesson: lesson)
                                 })

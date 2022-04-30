@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddLessonView: View {
     @StateObject private var viewModel = AddLessonViewModel()
+    @Environment(\.presentationMode) var presentationMode
     
     let backgroundColor = Color("Background")
     
@@ -61,6 +62,7 @@ struct AddLessonView: View {
             
             Button(action: {
                 viewModel.saveLesson()
+                self.presentationMode.wrappedValue.dismiss()
             }, label: {
                 Text("")
                     .bodyTextStyle(text: "Сохранить занятие")

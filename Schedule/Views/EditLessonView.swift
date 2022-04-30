@@ -10,6 +10,7 @@ import SwiftUI
 struct EditLessonView: View {
     let lesson: LessonModel
     @StateObject private var viewModel = EditLessonViewModel()
+    @Environment(\.presentationMode) var presentationMode
     
     @State var lessonName: String = ""
     @State var teacherLastName: String = ""
@@ -95,12 +96,15 @@ struct EditLessonView: View {
             setUpFields()
         }
         .alert("Изменения сохранены", isPresented: $showingEditAlert) {
-            Button("Хорошо", role: .cancel) {}
+            Button("Хорошо", role: .cancel) {
+                self.presentationMode.wrappedValue.dismiss()
+            }
         }
         .alert("Удалить занятие?", isPresented: $showingDeleteAlert) {
             Button("Удалить", role: .destructive) {
                 viewModel.deleteLesson(by: lesson.id)
                 cleanFields()
+                self.presentationMode.wrappedValue.dismiss()
             }
             Button("Оставить", role: .cancel) {}
         }

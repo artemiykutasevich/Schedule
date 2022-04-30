@@ -27,10 +27,17 @@ class ScheduleViewModel: ObservableObject {
         }
     }
     
-    func getLessonFor(day: Week) -> [LessonModel] {
+    func getLessonsFor(day: Week) -> [LessonModel] {
          return lessons
             .filter{$0.lessonDayInWeek == day}
-            .sorted{$0.lessonStartAt < $1.lessonStartAt}
+            .sorted{convertTimeToInt(from: $0.lessonStartAt) < convertTimeToInt(from: $1.lessonStartAt)}
+    }
+    
+    private func convertTimeToInt(from date: Date) -> Int {
+        let dataFormatter = DateFormatter()
+        dataFormatter.dateFormat = "HHmm"
+        let timeInInt = Int(dataFormatter.string(from: date)) ?? 2359
+        return timeInInt
     }
     
     private func getDay(from string: String) -> Week {
